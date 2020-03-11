@@ -8,7 +8,7 @@ class Solution(object):
     # lps[2] = 4 (b) for cccabac
     # lps[1] = 1 (b) for caba
     lps = {} # to save the longest palindromic substring with steps (key)
-    dic = []
+    #dic = []
     s_idx = 0
     s_max = 0
     cur_rep = 0
@@ -43,10 +43,11 @@ class Solution(object):
     			break
 
     #print("%s %d" % (lps, cur_rep))
-    for i in range(0, s_max):
-    	dic.append(s[lps[s_idx] - s_idx + i - cur_rep])
+    #for i in range(0, s_max):
+    #	dic.append(s[lps[s_idx] - s_idx + i - cur_rep])
     
-    return ''.join(dic)
+    #return ''.join(dic)
+    return s[lps[s_idx] - s_idx - cur_rep:lps[s_idx] - s_idx - cur_rep + s_max]
 
 my_test = Solution()
 msg = ["abcbabcbb","bbbbb","pwwkew","dvdf","bbtablud","nfpdmpi","dfevdfg","jbpnbwwd","umvejcuuk","tmmzuxt","ohvhjdml","anviaj","yfsrsrpzuya"]

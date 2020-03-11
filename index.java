@@ -10,7 +10,7 @@ class Solution {
   	for(int i=0; i<s.length(); i++) {
   		for(int x=0; x<i+1; x++) {
   			if(x > s.length()/2) break;
-  			if( i-x-1 < 0 || i+x > s.length()-1) break;
+  			if(i-x-1 < 0 || i+x > s.length()-1) break;
   			if(s.charAt(i-x-1) == s.charAt(i+x)) {
   				if(x*2+2 > s_max) {
   					s_max = x*2+2;
@@ -37,12 +37,13 @@ class Solution {
   			}
   		}
   	}
-  	char[] dic = new char[s_max];
-  	for(int i=0; i<s_max; i++) {
-  		dic[i] = s.charAt(lps[s_idx] - s_idx + i - cur_rep);
-  	}
+  	//char[] dic = new char[s_max];
+  	//for(int i=0; i<s_max; i++) {
+  	//	dic[i] = s.charAt(lps[s_idx] - s_idx + i - cur_rep);
+  	//}
   	//System.out.printf("%d\n",dic.length);
-  	return new String(dic);
+  	//return new String(dic);
+  	return s.substring(lps[s_idx] - s_idx - cur_rep, lps[s_idx] - s_idx - cur_rep + s_max);
   }
 }
 
