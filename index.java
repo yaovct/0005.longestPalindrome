@@ -24,7 +24,7 @@ class Solution {
   		}
   		for(int x=0; x<i+1; x++) {
   			if(x > s.length()/2) break;
-  			if( i-x < 0 || i+x > s.length()-1) break;
+  			if(i-x < 0 || i+x > s.length()-1) break;
   			if(s.charAt(i-x) == s.charAt(i+x)) {
   				if(x*2+1 > s_max) {
   					s_max = x*2+1;
